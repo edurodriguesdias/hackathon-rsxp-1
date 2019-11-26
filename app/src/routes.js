@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import DashboardAdminPage from "./pages/DashboardAdmin";
-import DashboardSchoolPage from "./pages/DashboardSchool";
+import DashboardCompanyPage from "./pages/DashboardCompany";
 import LoginPage from "./pages/Login";
 import SignCompanyPage from "./pages/SignCompany";
 import SignSchoolPage from "./pages/SignSchool";
@@ -16,7 +16,7 @@ export default function Routes() {
         <Route path="/school" exact component={SignSchoolPage} />
         <Route path="/company" exact component={SignCompanyPage} />
         <Route path="/login" exact component={LoginPage} />
-        <Route path="/school/dashboard" exact component={DashboardSchoolPage} />
+        <Route path="/company/dashboard" exact component={DashboardCompanyPage} />
         <Route path="/admin/dashboard" exact component={DashboardAdminPage} />
       </Switch>
     </BrowserRouter>

@@ -29,3 +29,8 @@ export const InputStyled = styled.input`
     color: ${colors.gray};
   }
 `;
+
+export const TitleLits = styled.h2`
+  font-size : 24px;
+  margin-top:22px;
+`;
