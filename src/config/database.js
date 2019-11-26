@@ -3,7 +3,7 @@ module.exports = {
     host: 'localhost',
     username: 'root',
     password: '',
-    database: 'meetapp',
+    database: 'temp',
     define: {
         timestamps: true,
         underscored: true,
