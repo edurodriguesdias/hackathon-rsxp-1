@@ -10,6 +10,6 @@ routes.post('/companies', CompanyController.store);
 
 routes.post('/schools', SchoolController.store);
 
-routes.post('/student', StudentsController.store);
+routes.post('/students', StudentsController.store);
 
 export default routes;
