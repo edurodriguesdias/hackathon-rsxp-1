@@ -11,13 +11,13 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased !important;
   }
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-thumb {
       -webkit-border-radius: 10px;
       border-radius: 10px;
-      background: ${colors.dark};
+      background: ${colors.primary};
       border-radius: 100px;
   }
 
@@ -25,7 +25,7 @@ export default createGlobalStyle`
     height:100%;
     width:100%;
     overflow-y:hidden;
-    overflow-y:hidden;
+    overflow-y:auto;
     position: relative;
   }
   body{

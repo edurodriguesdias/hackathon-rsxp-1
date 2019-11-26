@@ -1,7 +1,11 @@
 import React from "react";
 import Button from "../../components/Button";
-import { ContainerStyled, InputStyled } from "../../styles/components";
-import { FormStyled } from "./styles";
+import {
+  ContainerStyled,
+  FormStyled,
+  InputStyled
+} from "../../styles/components";
+
 export default function LoginPage({ navigation }) {
   return (
     <ContainerStyled>

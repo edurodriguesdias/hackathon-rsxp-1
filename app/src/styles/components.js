@@ -4,14 +4,16 @@ import { colors } from "../styles/colors";
 export const ContainerStyled = styled.div`
   display: flex;
   width: 80vw;
-  height: 80vh;
+  min-height: 80vh;
   margin: 0 auto;
   max-width: 1200px;
   justify-content: center;
   align-items: center;
   background-color: ${colors.light};
   border-radius: 20px;
-  margin-top: 10vh;
+  margin: 10vh auto;
+  overflow-y: auto;
+  padding-bottom: 5vh;
 `;
 export const InputStyled = styled.input`
   width: 40%;
@@ -31,6 +33,13 @@ export const InputStyled = styled.input`
 `;
 
 export const TitleLits = styled.h2`
-  font-size : 24px;
-  margin-top:22px;
+  font-size: 24px;
+  margin-top: 22px;
+`;
+
+export const FormStyled = styled.form`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 `;
