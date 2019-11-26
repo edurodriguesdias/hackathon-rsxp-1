@@ -11,7 +11,7 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={SignStudentPage} />
+        <Route path="/" exact component={LoginPage} />
         <Route path="/student" exact component={SignStudentPage} />
         <Route path="/school" exact component={SignSchoolPage} />
         <Route path="/company" exact component={SignCompanyPage} />

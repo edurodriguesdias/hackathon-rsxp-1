@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
-export const TestStyled = styled.h1`
-  color: red;
+export const FormStyled = styled.form`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 `;

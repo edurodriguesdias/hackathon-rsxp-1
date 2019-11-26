@@ -6,14 +6,15 @@ export const ButtonContentStyled = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 10vh;
 `;
 
 export const ButtonStyled = styled.button`
-  color: ${colors.dark};
-  font-size: 2vh;
+  background-color: ${colors.secondary};
+  font-size: 1.6rem;
   font-weight: 600;
-  border-radius: 6px;
-  height: 6vh;
-  width: 100%;
-  padding: 1vh;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 0;
+  color: ${colors.light};
 `;
