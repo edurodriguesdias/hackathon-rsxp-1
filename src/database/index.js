@@ -5,8 +5,6 @@ import Company from '../app/models/Company';
 import School from '../app/models/School';
 import Student from '../app/models/Student';
 
-import databaseConfig from '../config/database';
-
 const models = [Company, School, Student];
 
 class Database {

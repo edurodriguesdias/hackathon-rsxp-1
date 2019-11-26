@@ -1,5 +1,4 @@
 import { Router } from 'express';
-
 import CompanyController from './app/controllers/CompanyController';
 import SchoolController from './app/controllers/SchoolController';
 import StudentsController from './app/controllers/StudentsController';
