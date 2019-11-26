@@ -11,8 +11,8 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
         references: {
-          Model: 'School',
-          key: 'school_id'
+          model: 'school',
+          key: 'id'
         }
       },
       name: {
@@ -60,42 +60,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      city: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
       neighborhood: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      complement: {
+      school_level: {
         type: Sequelize.STRING,
         allowNull: true
       },
-      complement: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      complement: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      complement: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      complement: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      complement: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      complement: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },      
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -108,6 +80,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('users');
+      return queryInterface.dropTable('students');
   }
 };
