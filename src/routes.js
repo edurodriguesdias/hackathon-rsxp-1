@@ -21,4 +21,6 @@ routes.post('/companies', CompanyController.store);
 
 routes.post('/schools', SchoolController.store);
 
+routes.post('/students', StudentsController.store);
+
 export default routes;

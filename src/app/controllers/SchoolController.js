@@ -4,6 +4,8 @@ class SchoolController {
     async store(req, res) {
         const school = await School.create(req.body);
 
+        
+
         return res.json(school);
     }
 }
