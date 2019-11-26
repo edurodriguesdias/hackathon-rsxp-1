@@ -1,9 +1,9 @@
 module.exports = {
     dialect: 'mariadb',
-    host: 'localhost',
-    username: 'root',
-    password: '',
-    database: 'temp',
+    host: '108.179.253.74',
+    username: 'vinic952_rsxp',
+    password: '979899',
+    database: 'vinic952_hackathon',
     define: {
         timestamps: true,
         underscored: true,
