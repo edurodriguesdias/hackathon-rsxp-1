@@ -5,6 +5,7 @@ import StudentsController from './app/controllers/StudentsController';
 
 const routes = new Router();
 
+routes.get('/companies', CompanyController.index);
 routes.post('/companies', CompanyController.store);
 
 routes.post('/schools', SchoolController.store);
