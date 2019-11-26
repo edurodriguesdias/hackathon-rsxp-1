@@ -7,7 +7,7 @@ class Company extends Model {
                 name: Sequelize.STRING,
                 cnpj: Sequelize.STRING,
                 phone: Sequelize.STRING,
-                mail: Sequelize.STRING,
+                email: Sequelize.STRING,
                 street: Sequelize.STRING,
                 number: Sequelize.INTEGER,
                 district: Sequelize.STRING,
