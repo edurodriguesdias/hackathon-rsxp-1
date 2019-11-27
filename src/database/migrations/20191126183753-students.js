@@ -27,14 +27,6 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            gender: {
-                type: Sequelize.STRING,
-                allowNull: false,
-            },
-            marital_status: {
-                type: Sequelize.STRING,
-                allowNull: false,
-            },
             birth_date: {
                 type: Sequelize.DATE,
                 allowNull: false,

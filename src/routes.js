@@ -22,4 +22,6 @@ routes.post('/companies', CompanyController.store);
 routes.get('/schools', SchoolController.index);
 routes.post('/schools', SchoolController.store);
 
+routes.get('/available-schools', SchoolController.searchAvailableSchools);
+
 export default routes;

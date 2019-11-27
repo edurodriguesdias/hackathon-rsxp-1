@@ -6,6 +6,7 @@ class School extends Model {
             {
                 name: Sequelize.STRING,
                 phone: Sequelize.STRING,
+                school_api_id: Sequelize.INTEGER,
                 email: Sequelize.STRING,
                 street: Sequelize.STRING,
                 number: Sequelize.INTEGER,
