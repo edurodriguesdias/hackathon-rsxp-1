@@ -15,7 +15,7 @@ class CompanyController {
         });
 
         if (companyExists) {
-            return res.status(400).json({ error: 'Company already exists.' });
+            return res.status(200).json({ error: 'Company already exists.' });
         }
 
         const company = await Company.create(req.body);
