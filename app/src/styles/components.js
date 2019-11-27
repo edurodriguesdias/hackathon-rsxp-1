@@ -81,6 +81,7 @@ export const TitleLits = styled.h2`
   margin-bottom:22px;
   width:100%;
   height:auto;
+  color: ${colors.primary};
 `;
 
 export const UlList = styled.ul`
@@ -109,7 +110,7 @@ export const DivList = styled.div`
 
 export const LabelList = styled.p`
     font-size: 1rem ;
-    color: #ccc;
+    color: ${colors.darkGray};
 `;
 
 export const TextListBold = styled.p`
@@ -118,6 +119,7 @@ export const TextListBold = styled.p`
 `;
 
 export const TextList= styled.p`
+    color: ${colors.darkGray};
     font-size: 1.5rem ;
 `;
 

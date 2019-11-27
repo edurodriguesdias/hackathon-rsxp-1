@@ -15,28 +15,7 @@ export default function DashboardCompanyPage({ navigation }) {
                   <TextListBold>Nome Escola</TextListBold>
                   <TextList>Alameda das Araras, 23 Barueri</TextList>
                   <TextList>(11) 94785-5605</TextList>
-                  <TextList>escola@teste.com.br</TextList>
-                 
-                  </DivCol>
-                
-                  <DivCol20>
-                    <LabelList>Alunos</LabelList>
-                    <TextListBold>23</TextListBold>
-                  </DivCol20>
-                
-                </DivRow>
-             </LiList>
-           </UlList>
-
-           <UlList>
-             <LiList>
-               <DivRow>
-                  <DivCol>
-              
-                  <TextListBold>Nome Escola</TextListBold>
-                  <TextList>Alameda das Araras, 23 Barueri</TextList>
-                  <TextList>(11) 94785-5605</TextList>
-                  <TextList>escola@teste.com.br</TextList>
+                  <TextList><a href="mailto:elzoljr.91@gmail.com" >escola@teste.com.br</a></TextList>
                  
                   </DivCol>
                 
