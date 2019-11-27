@@ -43,3 +43,37 @@ export const FormStyled = styled.form`
   flex-direction: column;
   width: 100%;
 `;
+
+export const FileAreaStyled = styled.label`
+  display: flex;
+  justify-content: center;
+  border: 1px solid ${colors.gray};
+  width: 10vw;
+  height: 10vw;
+  border-radius: 20px;
+  margin-top: 5vh;
+  padding: 2vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  &:hover {
+    border: 1px solid ${colors.secondary};
+  }
+  .has-thumbnail {
+    display: none;
+  }
+  
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+  input {
+    display: none;
+  }
+`;
