@@ -15,6 +15,7 @@ import {
 export default function SignSchoolPage({ history }) {
   toast.configure();
 
+  const whiteList = "thumbnail";
   const [loading, setLoading] = useState(false);
   const [thumbnail, setThumbnail] = useState("");
   const [name, setName] = useState("");
@@ -34,8 +35,7 @@ export default function SignSchoolPage({ history }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setLoading(true);
-    const { data } = await api.post("/companies", {
+    const obj = {
       thumbnail,
       name,
       cnpj,
@@ -47,7 +47,19 @@ export default function SignSchoolPage({ history }) {
       city,
       state,
       zip_code
-    });
+    };
+
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        if (!obj[key] && whiteList.indexOf(key) === -1) {
+          toast.warn(`todos os campos com '*' são obrigatórios`);
+          return false;
+        }
+      }
+    }
+    alert("aqui");
+    setLoading(true);
+    const { data } = await api.post("/companies", obj);
 
     if (data.error) {
       setLoading(false);
@@ -76,62 +88,62 @@ export default function SignSchoolPage({ history }) {
         </FileAreaStyled>
         <InputStyled
           type="text"
-          placeholder="nome"
+          placeholder="nome *"
           value={name}
           onChange={event => setName(event.target.value)}
         />
         <InputStyled
           type="text"
-          placeholder="cnpj"
+          placeholder="cnpj *"
           value={cnpj}
           onChange={event => setCnpj(event.target.value)}
         />
         <InputStyled
           type="tel"
-          placeholder="telefone"
+          placeholder="telefone *"
           value={phone}
           onChange={event => setPhone(event.target.value)}
         />
         <InputStyled
           type="mail"
-          placeholder="e-mail"
+          placeholder="e-mail *"
           value={email}
           onChange={event => setMail(event.target.value)}
         />
         <InputStyled
           type="text"
-          placeholder="endereço"
+          placeholder="endereço *"
           value={street}
           onChange={event => setStreet(event.target.value)}
         />
         <InputStyled
           type="tel"
-          placeholder="numero"
+          placeholder="numero *"
           value={number}
           onChange={event => setNumber(event.target.value)}
         />
         <InputStyled
           type="text"
-          placeholder="bairro"
+          placeholder="bairro *"
           value={district}
           onChange={event => setDistrict(event.target.value)}
         />
         <InputStyled
           type="text"
-          placeholder="cidade"
+          placeholder="cidade *"
           value={city}
           onChange={event => setCity(event.target.value)}
         />
         <InputStyled
           type="text"
-          placeholder="uf"
+          placeholder="uf *"
           maxLength="2"
           value={state}
           onChange={event => setState(event.target.value)}
         />
         <InputStyled
           type="tel"
-          placeholder="cep"
+          placeholder="cep *"
           value={zip_code}
           onChange={event => setZip_code(event.target.value)}
         />

@@ -21,7 +21,7 @@ export default createGlobalStyle`
       border-radius: 100px;
   }
 html{
-  background:${colors.primary};
+  background:#833AB4;
 }
   html,body,#root{
     height:100%;

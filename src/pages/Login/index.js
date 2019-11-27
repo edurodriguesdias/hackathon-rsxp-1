@@ -14,6 +14,24 @@ function LoginPage({ history }) {
   const [loading, setLoading] = useState(false);
   async function handleSubmit(event) {
     event.preventDefault();
+
+    if (loading) {
+      return false;
+    }
+
+    if (!email && !password) {
+      toast.warn("preencha com seu e-mail e senha antes de continuar");
+      return false;
+    }
+    if (!email) {
+      toast.warn("preencha com seu e-mail  antes de continuar");
+      return false;
+    }
+    if (!password) {
+      toast.warn("preencha com suasenha antes de continuar");
+      return false;
+    }
+
     setLoading(true);
     const { data } = await api.post("/sessions", {
       email,
@@ -41,13 +59,13 @@ function LoginPage({ history }) {
       <FormStyled onSubmit={handleSubmit}>
         <InputStyled
           type="email"
-          placeholder="e-mail"
+          placeholder="e-mail *"
           value={email}
           onChange={event => setEmail(event.target.value)}
         />
         <InputStyled
           type="password"
-          placeholder="senha"
+          placeholder="senha *"
           value={password}
           onChange={event => setPassword(event.target.value)}
         />
