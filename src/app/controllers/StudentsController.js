@@ -17,7 +17,7 @@ class StudentsController {
 
         const isPartnerSchool = await School.findOne({
             where: {
-                school_api_id: req.body.school_id,
+                id: req.body.school_id,
             },
         });
 
