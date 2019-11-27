@@ -56,7 +56,7 @@ function LoginPage({ history }) {
 
   return (
     <ContainerStyled logoCenter={true}>
-      <FormStyled onSubmit={handleSubmit}>
+      <FormStyled onSubmit={handleSubmit} marginTop="10%">
         <InputStyled
           type="email"
           placeholder="e-mail *"
