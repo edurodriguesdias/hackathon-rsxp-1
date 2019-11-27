@@ -10,16 +10,45 @@ export default function DashboardAdminPage({ navigation,history }) {
   const [schools, setSchools] = useState([]);
   const [companies, setCompanies] = useState([]);
   const [type, setType] = useState('Escolas');
-
+  var data = [];
   
   useEffect( ()=>{
     async function getData(){
       if(type == "Escolas"){
-        const { data } = await api.get("/schools ");
+        // const { data } = await api.get("/schools ");
+        // setSchools(data);
+
+        data = [{
+          "name": "EMEF José Luiz Pinto",
+          "street": "Rua Cassiano Ricardo",
+          "number": "77",
+          "city" : "São Roque",
+          "state" : "São Paulo",
+          "numbers" : "1",
+        },
+        {
+          "name": "EMEF Iracema Villaça",
+          "street": "Rua Santa Virginia",
+          "number": "66",
+          "city" : "São Roque",
+          "state" : "São Paulo",
+          "numbers" : "1",
+        }]
         setSchools(data);
       }else{
-        const { data } = await api.get("/schools ");
-        setCompanies([])
+
+        data = [{
+          "name": "Globo",
+          "numbers" : "1",
+        },
+        {
+          "name": "LinkApi",
+          "numbers" : "1",
+        }]
+        // const { data } = await api.get("/schools ");
+        setCompanies(data)
+
+        
       }
     }
     
@@ -40,10 +69,8 @@ export default function DashboardAdminPage({ navigation,history }) {
     <DivList>
       <BackButton/>
       <ButtonMenu onClick={() => goView('Escolas')} margin="80px">
-       
           <p>Cadastro de Escolas</p>
           <img src={IconScholl}/>
-        
       </ButtonMenu>
       <ButtonMenu onClick={() => goView('Empresas')}>
         <img src={IconCompany}/>
@@ -74,15 +101,15 @@ export default function DashboardAdminPage({ navigation,history }) {
                   {school.street}, {school.number} - {school.city}/{" "}
                   {school.state}
                 </TextList>
-                <TextList>{school.phone}</TextList>
+                {/* <TextList>{school.phone}</TextList>
                 <TextList>
                   <a href="mailto:{school.mail}">{school.email}</a>
-                </TextList>
+                </TextList> */}
               </DivCol>
 
               <DivCol20>
                 <LabelList>Alunos</LabelList>
-                <TextListBold>23</TextListBold>
+                <TextListBold>{school.numbers}</TextListBold>
               </DivCol20>
             </DivRow>
           </LiList>
@@ -92,24 +119,16 @@ export default function DashboardAdminPage({ navigation,history }) {
 
 {type == "Empresas" &&
 <>
-        {companies.map((school,indice) => (
+        {companies.map((company,indice) => (
           <LiList key={indice}>
             <DivRow>
               <DivCol>
-                <TextListBold>{school.name}</TextListBold>
-                <TextList>
-                  {school.street}, {school.number} - {school.city}/{" "}
-                  {school.state}
-                </TextList>
-                <TextList>{school.phone}</TextList>
-                <TextList>
-                  <a href="mailto:{school.mail}">{school.email}</a>
-                </TextList>
+                <TextListBold>{company.name}</TextListBold>
               </DivCol>
 
               <DivCol20>
                 <LabelList>Alunos</LabelList>
-                <TextListBold>23</TextListBold>
+                <TextListBold>{company.numbers}</TextListBold>
               </DivCol20>
             </DivRow>
           </LiList>
