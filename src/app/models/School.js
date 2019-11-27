@@ -19,6 +19,8 @@ class School extends Model {
                 sequelize,
             }
         );
+
+        return this;
     }
 }
 
