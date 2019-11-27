@@ -44,17 +44,17 @@ function SignStudentPage({ history }) {
 
       <FormStyled onSubmit={handleSubmit}>
         <TitleLits align="center">cadastro do aluno</TitleLits>
-        <InputStyled type="text" placeholder="nome*" />
-        <InputStyled type="tel" placeholder="telefone*" />
-        <InputStyled type="tel" placeholder="data de nascimento*" />
-        <InputStyled type="mail" placeholder="e-mail*" />
-        <InputStyled type="text" placeholder="endereço*" />
-        <InputStyled type="tel" placeholder="numero*" />
-        <InputStyled type="text" placeholder="bairro*" />
-        <InputStyled type="text" placeholder="cidade*" />
-        <InputStyled type="text" placeholder="uf*" maxLength="2" />
-        <InputStyled type="tel" placeholder="cep*" />
-        <InputStyled type="text" placeholder="escolaridade*" />
+        <InputStyled type="text" placeholder="nome*" value="Marcos Vinicius Ricardo"  />
+        <InputStyled type="tel" placeholder="telefone*" value="11999982424" />
+        <InputStyled type="tel" placeholder="data de nascimento*" value="02/08/2004" />
+        <InputStyled type="mail" placeholder="e-mail*" value="marcos@gmail.com.br"/>
+        <InputStyled type="text" placeholder="endereço*" value="Rua Saturno" />
+        <InputStyled type="tel" placeholder="numero*" value="233"/>
+        <InputStyled type="text" placeholder="bairro*" value="Jardim Silveira"/>
+        <InputStyled type="text" placeholder="cidade*" value="Jandira" />
+        <InputStyled type="text" placeholder="uf*" maxLength="2" value="SP" />
+        <InputStyled type="tel" placeholder="cep*" value="064455560" />
+        <InputStyled type="text" placeholder="escolaridade*" value="Ensino médio"/>
         <SelectStyled>
           <option value="">selecione sua escola *</option>
           {schools.map(obj => (
