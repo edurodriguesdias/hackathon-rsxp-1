@@ -149,8 +149,11 @@ export const LabelList = styled.p`
 export const TextListBold = styled.p`
   font-size: 1.5rem;
   font-weight: bold;
-  a{
+  span{
     cursor: pointer
+  }
+  span:hover{
+    color: ${colors.secondary};
   }
 `;
 
@@ -179,4 +182,42 @@ export const DivCol20 = styled.div`
   width: 20%;
   justify-content: center;
   align-items: center;
+`;
+
+export const ButtonMenu = styled.div`
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background: ${colors.primary};
+  position: fixed;
+  right: 3%;
+  bottom: 5%;
+  border-radius: 50px;
+  margin-bottom: ${({ margin }) => margin};
+  opacity:0.5;
+
+  p{
+    display:none;
+  }
+  img{
+    width: 40px;
+    height: 40px;
+  }
+  &:hover{
+    opacity:1;
+    width: 300px;
+    align-items: left;
+  }
+  &:hover img{
+    position:absolute;
+    left:80%;
+  }
+  &:hover p{
+    position:absolute;
+    display:inline-block;
+    right:30%;
+    color: ${colors.light};
+  }
 `;
