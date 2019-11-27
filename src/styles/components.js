@@ -197,7 +197,7 @@ export const ButtonMenu = styled.div`
   border-radius: 50px;
   margin-bottom: ${({ margin }) => margin};
   opacity:0.5;
-
+  cursor:pointer;
   p{
     display:none;
   }
