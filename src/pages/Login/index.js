@@ -5,7 +5,8 @@ import api from "../../services/api";
 import {
   ContainerStyled,
   FormStyled,
-  InputStyled
+  InputStyled,
+  TextLink,
 } from "../../styles/components";
 function LoginPage({ history }) {
   toast.configure();
@@ -54,6 +55,10 @@ function LoginPage({ history }) {
     }
   }
 
+  async function goView(){
+      history.push("/student");
+  }
+
   return (
     <ContainerStyled logoCenter={true}>
       <FormStyled onSubmit={handleSubmit} marginTop="10%">
@@ -70,6 +75,10 @@ function LoginPage({ history }) {
           onChange={event => setPassword(event.target.value)}
         />
         <Button text="acessar" loading={loading} />
+
+        <TextLink onClick={() => goView()}>
+          Aluno clique aqui para efetuar seu cadastro! =)
+        </TextLink>
       </FormStyled>
     </ContainerStyled>
   );

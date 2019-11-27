@@ -222,3 +222,10 @@ export const ButtonMenu = styled.div`
     color: ${colors.light};
   }
 `;
+
+export const TextLink = styled.div`
+    color: ${colors.blackGray};
+    text-aling: center;
+    margin-top: 3%;
+    cursor:pointer
+`
