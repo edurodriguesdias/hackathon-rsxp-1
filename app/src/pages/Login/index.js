@@ -19,11 +19,17 @@ function LoginPage({ history }) {
     });
 
     localStorage.setItem("rsxp:token", data.token);
-    history.push("/company/dashboard");
+    console.log(data.user);
+    if (data.user.type == 1) {
+      //admin
+      history.push("/admin/dashboard");
+    } else {
+      history.push("/company/dashboard");
+    }
   }
 
   return (
-    <ContainerStyled aqui>
+    <ContainerStyled logo={true}>
       <FormStyled onSubmit={handleSubmit}>
         <InputStyled
           type="email"
