@@ -72,7 +72,7 @@ export const FormStyled = styled.form`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin-top: ${({ marginTop }) => marginTop}
+  margin-top: ${({ marginTop }) => marginTop};
 `;
 
 export const FileAreaStyled = styled.label`
@@ -150,10 +150,10 @@ export const LabelList = styled.p`
 export const TextListBold = styled.p`
   font-size: 1.5rem;
   font-weight: bold;
-  span{
-    cursor: pointer
+  span {
+    cursor: pointer;
   }
-  span:hover{
+  span:hover {
     color: ${colors.secondary};
   }
 `;
@@ -186,7 +186,7 @@ export const DivCol20 = styled.div`
 `;
 
 export const ButtonMenu = styled.div`
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 70px;
@@ -197,35 +197,39 @@ export const ButtonMenu = styled.div`
   bottom: 5%;
   border-radius: 50px;
   margin-bottom: ${({ margin }) => margin};
-  opacity:0.5;
-  cursor:pointer;
-  p{
-    display:none;
+  opacity: 0.5;
+  cursor: pointer;
+  p {
+    display: none;
   }
-  img{
+  img {
     width: 40px;
     height: 40px;
   }
-  &:hover{
-    opacity:1;
+  &:hover {
+    opacity: 1;
     width: 300px;
     align-items: left;
   }
-  &:hover img{
-    position:absolute;
-    left:80%;
+  &:hover img {
+    position: absolute;
+    left: 80%;
   }
-  &:hover p{
-    position:absolute;
-    display:inline-block;
-    right:30%;
+  &:hover p {
+    position: absolute;
+    display: inline-block;
+    right: 30%;
     color: ${colors.light};
   }
 `;
 
 export const TextLink = styled.div`
-    color: ${colors.blackGray};
-    text-aling: center;
-    margin-top: 3%;
-    cursor:pointer
-`
+  color: ${colors.blackGray};
+  text-align: center;
+  margin-top: 3%;
+  cursor: pointer;
+  text-decoration: underline;
+  &:hover {
+    color: ${colors.secondary};
+  }
+`;

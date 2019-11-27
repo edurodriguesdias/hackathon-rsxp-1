@@ -15,19 +15,21 @@ import {
 export default function SignSchoolPage({ history }) {
   toast.configure();
 
-  const whiteList = "thumbnail";
+  const whiteList = ["thumbnail"];
   const [loading, setLoading] = useState(false);
   const [thumbnail, setThumbnail] = useState("");
-  const [name, setName] = useState("");
-  const [cnpj, setCnpj] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setMail] = useState("");
-  const [street, setStreet] = useState("");
-  const [number, setNumber] = useState("");
-  const [district, setDistrict] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [zip_code, setZip_code] = useState("");
+  const [name, setName] = useState("rocketseat");
+  const [cnpj, setCnpj] = useState("17.830.029/0001-01");
+  const [phone, setPhone] = useState("(11) 4929-2812");
+  const [email, setMail] = useState("oi@rocketseat.com.br");
+  const [street, setStreet] = useState(
+    "Residencial Acalanto - R. Guilherme Gemballa"
+  );
+  const [number, setNumber] = useState("260");
+  const [district, setDistrict] = useState("Jardim América");
+  const [city, setCity] = useState("Rio do Sul");
+  const [state, setState] = useState("SC");
+  const [zip_code, setZip_code] = useState("89160-188");
 
   const preview = useMemo(() => {
     return thumbnail ? URL.createObjectURL(thumbnail) : null;
@@ -57,7 +59,6 @@ export default function SignSchoolPage({ history }) {
         }
       }
     }
-    alert("aqui");
     setLoading(true);
     const { data } = await api.post("/companies", obj);
 
@@ -67,7 +68,7 @@ export default function SignSchoolPage({ history }) {
       return false;
     }
     toast.success("cadastro realizado com sucesso");
-    history.push("/login");
+    history.goBack();
   }
 
   return (

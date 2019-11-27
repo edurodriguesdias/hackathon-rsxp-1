@@ -1,22 +1,10 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import IconCompany from "../../assets/factory.png";
+import IconScholl from "../../assets/school.png";
 import BackButton from "../../components/BackButton";
-import IconScholl from "../../assets/school.png"
-import IconCompany from "../../assets/factory.png"
-import api from "../../services/api";
 import SubTitle from "../../components/SubTitle";
-import {
-  DivCol,
-  DivCol20,
-  DivList,
-  DivRow,
-  LabelList,
-  LiList,
-  TextList,
-  TextListBold,
-  TitleLits,
-  UlList,
-  ButtonMenu,
-} from "../../styles/components";
+import api from "../../services/api";
+import { ButtonMenu, DivCol, DivCol20, DivList, DivRow, LabelList, LiList, TextList, TextListBold, TitleLits, UlList } from "../../styles/components";
 export default function DashboardAdminPage({ navigation,history }) {
   
   const [schools, setSchools] = useState([]);
@@ -57,7 +45,7 @@ export default function DashboardAdminPage({ navigation,history }) {
           <img src={IconScholl}/>
         
       </ButtonMenu>
-      <ButtonMenu onClick={() => goView('Escolas')}>
+      <ButtonMenu onClick={() => goView('Empresas')}>
         <img src={IconCompany}/>
         <p>Cadastro de Empresas</p>
       </ButtonMenu>
