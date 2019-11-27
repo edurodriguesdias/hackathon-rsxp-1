@@ -25,7 +25,7 @@ class SchoolController {
 
             return res.status(200).json({ data: schoolData });
         } catch (err) {
-            return res.status(400).json({ error: err });
+            return res.status(200).json({ error: err });
         }
     }
 }

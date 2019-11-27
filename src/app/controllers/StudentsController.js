@@ -11,7 +11,7 @@ class StudentsController {
 
         if (hasStudentEmail) {
             return res
-                .status(400)
+                .status(200)
                 .json({ error: 'Estudante já cadastrado em nossa base.' });
         }
 
@@ -30,7 +30,7 @@ class StudentsController {
             });
             return res.json(student);
         } catch (err) {
-            return res.status(400).json({ error: err });
+            return res.status(200).json({ error: err });
         }
     }
 }
