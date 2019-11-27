@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import Students from '../models/Student';
 import School from '../models/School';
 
@@ -12,7 +10,9 @@ class StudentsController {
         });
 
         if (hasStudentEmail) {
-            return res.status(400).json({ error: 'Student already exists.' });
+            return res
+                .status(400)
+                .json({ error: 'Estudante já cadastrado em nossa base.' });
         }
 
         const isPartnerSchool = await School.findOne({
@@ -30,19 +30,7 @@ class StudentsController {
             });
             return res.json(student);
         } catch (err) {
-            console.log('student error', err);
-        }
-    }
-
-    static async getAvailableSchoolById(schoolId) {
-        try {
-            const { data } = await axios.get(
-                `http://educacao.dadosabertosbr.com/api/escola/${schoolId}`
-            );
-
-            return data;
-        } catch (err) {
-            console.log('api error', err);
+            return res.status(400).json({ error: err });
         }
     }
 }
