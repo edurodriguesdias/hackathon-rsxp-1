@@ -20,13 +20,16 @@ export default createGlobalStyle`
       background: ${colors.primary};
       border-radius: 100px;
   }
-
+html{
+  background:${colors.primary};
+}
   html,body,#root{
     height:100%;
     width:100%;
     overflow-y:hidden;
     overflow-y:auto;
     position: relative;
+    
   }
   body{
     background: rgb(131,58,180);
