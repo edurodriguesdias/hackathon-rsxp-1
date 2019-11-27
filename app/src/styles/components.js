@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import logo from "../assets/logo.png";
 import { colors } from "../styles/colors";
 
@@ -17,19 +17,25 @@ export const ContainerStyled = styled.div`
   padding-bottom: 5vh;
   position: relative;
 
-  &:before {
-    content: "";
-    width: 200px;
-    height: 200px;
-    background-image: url(${logo});
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0vw;
-    left: auto;
-    right: auto;
-    z-index: 9999;
-  }
+  ${props => {
+    props.logo &&
+      css`
+        &:before {
+          content: "";
+          width: 200px;
+          height: 200px;
+          background-image: url(${logo});
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: absolute;
+          top: 0vw;
+          left: 10px;
+          z-index: 9999;
+          left: auto;
+          right: auto;
+        }
+      `;
+  }}
 `;
 export const InputStyled = styled.input`
   width: 40%;
@@ -53,8 +59,6 @@ export const InputStyled = styled.input`
     transition: border-bottom 1s;
   }
 `;
-
-
 
 export const FormStyled = styled.form`
   display: flex;
@@ -98,24 +102,24 @@ export const FileAreaStyled = styled.label`
 
 export const TitleLits = styled.h2`
   font-size: 3.5rem;
-  margin-top:22px;
-  margin-bottom:22px;
-  width:100%;
-  height:auto;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  width: 100%;
+  height: auto;
   color: ${colors.primary};
 `;
 
 export const UlList = styled.ul`
-   width:90%;
-   height:auto;
+  width: 90%;
+  height: auto;
 `;
 
 export const LiList = styled.li`
-   width:100%;
-   height:auto;
-   list-style-type: none;
-   border-top: 1px  solid #ccc;
-   padding: 16px 0 16px 0;
+  width: 100%;
+  height: auto;
+  list-style-type: none;
+  border-top: 1px solid #ccc;
+  padding: 16px 0 16px 0;
 `;
 
 export const DivList = styled.div`
@@ -130,40 +134,38 @@ export const DivList = styled.div`
 `;
 
 export const LabelList = styled.p`
-    font-size: 1rem ;
-    color: ${colors.darkGray};
+  font-size: 1rem;
+  color: ${colors.darkGray};
 `;
 
 export const TextListBold = styled.p`
-    font-size: 1.5rem ;
-    font-weight:bold;
+  font-size: 1.5rem;
+  font-weight: bold;
 `;
 
-export const TextList= styled.p`
-    color: ${colors.darkGray};
-    font-size: 1.5rem ;
+export const TextList = styled.p`
+  color: ${colors.darkGray};
+  font-size: 1.5rem;
 `;
 
 export const DivRow = styled.div`
-    display:flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 `;
 export const DivCol = styled.div`
-    display:flex;
-    flex-direction: column;
-    width:100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
-    img{
-      width: 30px;
-      height: 30px;
-    }
+  img {
+    width: 30px;
+    height: 30px;
+  }
 `;
 export const DivCol20 = styled.div`
-    display:flex;
-    flex-direction: column;
-    width:20%;
-    justify-content: center;
-    align-items: center;
-    
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
 `;
-

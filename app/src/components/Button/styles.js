@@ -19,9 +19,9 @@ export const ButtonStyled = styled.button`
   color: ${colors.light};
   transition: background-color 0.5s;
   min-width: 125px;
-  width: 125px;
+
   min-height: 50px;
-  height: 50px;
+
   cursor: pointer;
   position: relative;
   ${({ loading }) => {
@@ -36,7 +36,6 @@ export const ButtonStyled = styled.button`
     height: 40px;
     position: absolute;
     left: 6px;
-
     top: 10px;
   }
 
