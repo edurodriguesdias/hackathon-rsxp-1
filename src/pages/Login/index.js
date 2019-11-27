@@ -43,6 +43,7 @@ function LoginPage({ history }) {
 
     if (data.error) {
       toast.error(data.error);
+      setLoading(false)
       return false;
     }
 

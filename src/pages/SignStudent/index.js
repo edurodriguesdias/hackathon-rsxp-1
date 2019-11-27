@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import BackButton from "../../components/BackButton";
 import Buttton from "../../components/Button";
 import api from "../../services/api";
@@ -12,6 +13,7 @@ import {
 import { BoxCompaniesStyled ,  ImageStyled,SelectStyled} from "./styles";
 
 function SignStudentPage({ history }) {
+  toast.configure();
   async function getCompanies() {
     let { data } = await api.get("/companies");
     setCompanies(data);
@@ -19,6 +21,12 @@ function SignStudentPage({ history }) {
   async function getSchools() {
     let { data } = await api.get("/schools");
     setSchools(data);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    toast.success("cadastro realizado com sucesso");
+    history.goBack();
   }
   useEffect(() => {
     getCompanies();
@@ -34,7 +42,7 @@ function SignStudentPage({ history }) {
     <ContainerStyled>
       <BackButton />
 
-      <FormStyled>
+      <FormStyled onSubmit={handleSubmit}>
         <TitleLits align="center">cadastro do aluno</TitleLits>
         <InputStyled type="text" placeholder="nome*" />
         <InputStyled type="tel" placeholder="telefone*" />
