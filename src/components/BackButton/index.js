@@ -5,7 +5,7 @@ import { IconStyled } from "./styles";
 
 function BackButton({ history }) {
   async function back() {
-    history.push("/login");
+    history.goBack();
   }
   return (
     <IconStyled onClick={back}>
