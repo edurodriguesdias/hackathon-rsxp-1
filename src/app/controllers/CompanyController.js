@@ -4,7 +4,7 @@ import File from '../models/File';
 class CompanyController {
     async index(req, res) {
         const companies = await Company.findAll({
-            order: ['name'],
+            order: ['id'],
             include: [
                 {
                     model: File,
