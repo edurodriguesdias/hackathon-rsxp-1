@@ -118,7 +118,7 @@ export const TitleLits = styled.h2`
 `;
 
 export const UlList = styled.ul`
-  width: 90%;
+  width: 100%;
   height: auto;
 `;
 
@@ -149,6 +149,9 @@ export const LabelList = styled.p`
 export const TextListBold = styled.p`
   font-size: 1.5rem;
   font-weight: bold;
+  a{
+    cursor: pointer
+  }
 `;
 
 export const TextList = styled.p`

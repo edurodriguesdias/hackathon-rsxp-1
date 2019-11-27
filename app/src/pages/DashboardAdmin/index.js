@@ -13,20 +13,39 @@ import {
   TitleLits,
   UlList
 } from "../../styles/components";
-export default function DashboardCompanyPage({ navigation }) {
+export default function DashboardAdminPage({ navigation }) {
+  
   const [schools, setSchools] = useState([]);
-  async function searchScool() {
+  const [type, setType] = useState([]);
+  
+ 
+  async function searchScool(selected) {
     // event.preventDefault();
-    const { data } = await api.get("/schools ");
+    const { data } = await api.get("/schools");
+    setType(selected);
     setSchools(data);
   }
-  searchScool();
+  
+
+  searchScool('Escolas');
+
+  // setType('Escola');
+ function selectType(selected) {
+    console.log(selected)
+  
+    searchScool(selected);
+    // event.preventDefault();
+    // const { data } = await api.get("/schools ");
+    // setSchools(data);
+  }
+
 
   return (
     <DivList>
       <BackButton />
       {/* <TestStyled>DashboardSchool</TestStyled> */}
-      <TitleLits>Escolas</TitleLits>
+      <TextListBold> <a onClick={event => selectType('Escolas')}>Escolas</a> / <a onClick={event => selectType('Empresas')}>Empresas</a></TextListBold>
+      <TitleLits>{type}</TitleLits>
       <UlList>
         {schools.map(school => (
           <LiList>

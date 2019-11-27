@@ -1,21 +1,34 @@
-import React from "react";
+import React,{useState} from "react";
 import { TestStyled } from "./styles";
 import emailIcon from '../../assets/e-mail-envelope.png';
+import api from "../../services/api";
 import { TitleLits,UlList, LiList, DivList,TextListBold,LabelList,TextList,DivRow,DivCol,DivCol20} from "../../styles/components";
 export default function DashboardCompanyPage({ navigation }) {
+  const [schools,setSchools] = useState([]);
+  async function searchScool() {
+    // event.preventDefault();
+    const { data } = await api.get("/schools ");
+    setSchools(data);
+    
+  }
+  searchScool();
+  
+
+
   return (
       <DivList>
            {/* <TestStyled>DashboardSchool</TestStyled> */}
            <TitleLits>Escolas</TitleLits>
            <UlList>
+           {schools.map(school =>
              <LiList>
                <DivRow>
                   <DivCol>
               
-                  <TextListBold>Nome Escola</TextListBold>
-                  <TextList>Alameda das Araras, 23 Barueri</TextList>
-                  <TextList>(11) 94785-5605</TextList>
-                  <TextList><a href="mailto:elzoljr.91@gmail.com" >escola@teste.com.br</a></TextList>
+                  <TextListBold>{school.name}</TextListBold>
+                  <TextList>{school.street}, {school.number} - {school.city}/ {school.state}</TextList>
+                  <TextList>{school.phone}</TextList>
+                  <TextList><a href="mailto:{school.email}" >{school.email}</a></TextList>
                  
                   </DivCol>
                 
@@ -26,23 +39,14 @@ export default function DashboardCompanyPage({ navigation }) {
                 
                 </DivRow>
              </LiList>
+              )}
            </UlList>
 
 
       </DivList> 
       // School:
       // v
-      // {
-      //     "name": "ITB Brasílio Flores de Azevedo",
-      //     "phone": "(11) 4199-4220",
-      //     "mail": "contato@itb.com.br",
-      //     "street": "R. Interna Grupo Bandeirante",
-      //     "number": 138,
-      //     "district": "Jardim Belval",
-      //     "city": "Barueri",
-      //     "state": "São Paulo",
-      //     "zip_code": "Barueri"
-      // }
+   
     );
 }
   
