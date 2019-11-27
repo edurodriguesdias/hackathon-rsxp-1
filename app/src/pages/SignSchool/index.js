@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 import {
   ContainerStyled,
   FormStyled,
-  InputStyled
+  InputStyled,TitleLits
 } from "../../styles/components";
 
 export default function SignSchoolPage({ navigation }) {
@@ -12,6 +12,7 @@ export default function SignSchoolPage({ navigation }) {
     <ContainerStyled>
       <BackButton />
       <FormStyled>
+        <TitleLits align="center">cadastro da escola</TitleLits>
         <InputStyled type="text" placeholder="nome" />
         <InputStyled type="tel" placeholder="telefone" />
         <InputStyled type="mail" placeholder="e-mail" />

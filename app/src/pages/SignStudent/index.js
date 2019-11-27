@@ -4,14 +4,17 @@ import Buttton from "../../components/Button";
 import {
   ContainerStyled,
   FormStyled,
-  InputStyled
+  InputStyled,
+  TitleLits
 } from "../../styles/components";
 
 export default function SignStudentPage({ navigation }) {
   return (
     <ContainerStyled>
       <BackButton />
+
       <FormStyled>
+        <TitleLits align="center">cadastro do aluno</TitleLits>
         <InputStyled type="text" placeholder="nome" />
         <InputStyled type="tel" placeholder="telefone" />
         <InputStyled type="tel" placeholder="data de nascimento" />

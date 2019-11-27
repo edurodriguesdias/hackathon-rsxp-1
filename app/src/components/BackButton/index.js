@@ -1,13 +1,17 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import BackIcon from "../../assets/backbutton.svg";
 import { IconStyled } from "./styles";
 
-function BackButton() {
+function BackButton({ history }) {
+  async function back() {
+    history.push("/login");
+  }
   return (
-    <IconStyled>
+    <IconStyled onClick={back}>
       <img src={BackIcon} />
     </IconStyled>
   );
 }
 
-export default BackButton;
+export default withRouter(BackButton);

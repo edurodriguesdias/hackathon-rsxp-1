@@ -114,6 +114,7 @@ export const TitleLits = styled.h2`
   width: 100%;
   height: auto;
   color: ${colors.primary};
+  text-align: ${({ align }) => align};
 `;
 
 export const UlList = styled.ul`

@@ -8,7 +8,8 @@ import {
   ContainerStyled,
   FileAreaStyled,
   FormStyled,
-  InputStyled
+  InputStyled,
+  TitleLits
 } from "../../styles/components";
 
 export default function SignSchoolPage({ history }) {
@@ -61,6 +62,7 @@ export default function SignSchoolPage({ history }) {
     <ContainerStyled logoCenter={false}>
       <BackButton />
       <FormStyled onSubmit={handleSubmit}>
+        <TitleLits align="center">cadastro de empresa</TitleLits>
         <FileAreaStyled style={{ backgroundImage: `url(${preview})` }}>
           <img
             src={PictureIcon}
