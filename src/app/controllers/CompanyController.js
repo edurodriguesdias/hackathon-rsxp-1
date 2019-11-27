@@ -23,7 +23,9 @@ class CompanyController {
         });
 
         if (companyExists) {
-            return res.status(200).json({ error: 'Company already exists.' });
+            return res
+                .status(200)
+                .json({ error: 'Empresa já cadastrada em nossa base.' });
         }
 
         const { originalname: name, filename: path } = req.file;
