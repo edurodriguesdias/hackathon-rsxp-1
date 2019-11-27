@@ -4,7 +4,7 @@ import File from '../models/File';
 class CompanyController {
     async index(req, res) {
         const companies = await Company.findAll({
-            order: ['id', 'DESC'],
+            order: ['id'],
             include: [
                 {
                     model: File,
@@ -23,9 +23,7 @@ class CompanyController {
         });
 
         if (companyExists) {
-            return res
-                .status(200)
-                .json({ error: 'Empresa já cadastrada em nossa base.' });
+            return res.status(200).json({ error: 'Company already exists.' });
         }
 
         // const { originalname: name, filename: path } = req.file;
