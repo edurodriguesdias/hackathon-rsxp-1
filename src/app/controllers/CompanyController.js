@@ -1,12 +1,20 @@
 import Company from '../models/Company';
+import File from '../models/File';
 
 class CompanyController {
     async index(req, res) {
-        const appointments = await Company.findAll({
+        const companies = await Company.findAll({
             order: ['name'],
+            include: [
+                {
+                    model: File,
+                    as: 'logo',
+                    attributes: ['name', 'path', 'url'],
+                },
+            ],
         });
 
-        return res.json(appointments);
+        return res.json(companies);
     }
 
     async store(req, res) {
@@ -18,7 +26,13 @@ class CompanyController {
             return res.status(200).json({ error: 'Company already exists.' });
         }
 
-        const company = await Company.create(req.body);
+        const { originalname: name, filename: path } = req.file;
+        const file = await File.create({
+            name,
+            path,
+        });
+
+        const company = await Company.create({ ...req.body, logo_id: file.id });
 
         return res.json(company);
     }

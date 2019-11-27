@@ -11,20 +11,19 @@ class Student extends Model {
                 marital_status: Sequelize.STRING,
                 birth_date: Sequelize.STRING,
                 zip_code: Sequelize.STRING,
-                birth_date: Sequelize.STRING,
-                zip_code: Sequelize.STRING,
                 city: Sequelize.STRING,
                 state: Sequelize.STRING,
                 address: Sequelize.STRING,
                 address_number: Sequelize.STRING,
-                city: Sequelize.STRING,
                 neighborhood: Sequelize.STRING,
-                school_level: Sequelize.STRING
+                school_level: Sequelize.STRING,
             },
             {
                 sequelize,
             }
         );
+
+        return this;
     }
 }
 

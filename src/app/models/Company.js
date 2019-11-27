@@ -19,6 +19,12 @@ class Company extends Model {
                 sequelize,
             }
         );
+
+        return this;
+    }
+
+    static associate(models) {
+        this.belongsTo(models.File, { foreignKey: 'logo_id', as: 'logo' });
     }
 }
 
