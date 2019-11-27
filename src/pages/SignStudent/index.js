@@ -6,9 +6,10 @@ import {
   ContainerStyled,
   FormStyled,
   InputStyled,
+
   TitleLits
 } from "../../styles/components";
-import { BoxCompaniesStyled, SelectStyled } from "./styles";
+import { BoxCompaniesStyled ,  ImageStyled,SelectStyled} from "./styles";
 
 function SignStudentPage({ history }) {
   async function getCompanies() {
@@ -26,6 +27,7 @@ function SignStudentPage({ history }) {
 
   const [companies, setCompanies] = useState([]);
   const [schools, setSchools] = useState([]);
+  const [companyActive, setCompanyActive] = useState([]);
   // setCompanies(data);
   console.log("companies", companies);
   return (
@@ -53,7 +55,7 @@ function SignStudentPage({ history }) {
         </SelectStyled>
         <BoxCompaniesStyled>
           {companies.map((obj, indice) => (
-            <img key={indice} src={obj.logo.url} alt={obj.name} />
+            <ImageStyled key={indice} src={obj.logo.url} alt={obj.name} onClick={() => setCompanyActive(obj.id)} active={obj.id == companyActive} />
           ))}
         </BoxCompaniesStyled>
         <InputStyled type="text" placeholder="sugira uma empresa" />
