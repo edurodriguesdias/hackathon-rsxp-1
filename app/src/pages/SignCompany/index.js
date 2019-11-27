@@ -53,7 +53,7 @@ export default function SignSchoolPage({ history }) {
       toast.error(data.error);
       return false;
     }
-    toast.sucess("cadastro realizado com sucesso");
+    toast.success("cadastro realizado com sucesso");
     history.push("/login");
   }
 

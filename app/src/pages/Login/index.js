@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import Button from "../../components/Button";
 import api from "../../services/api";
 import {
@@ -7,6 +8,7 @@ import {
   InputStyled
 } from "../../styles/components";
 function LoginPage({ history }) {
+  toast.configure();
   const [email, setEmail] = useState("admin@mail.com");
   const [password, setPassword] = useState("1234567");
   const [loading, setLoading] = useState(false);
@@ -19,7 +21,13 @@ function LoginPage({ history }) {
     });
 
     localStorage.setItem("rsxp:token", data.token);
-    console.log(data.user);
+
+    if (data.error) {
+      toast.error(data.error);
+      return false;
+    }
+
+    toast.success(`olá, ${data.user.name}`);
     if (data.user.type == 1) {
       //admin
       history.push("/admin/dashboard");
