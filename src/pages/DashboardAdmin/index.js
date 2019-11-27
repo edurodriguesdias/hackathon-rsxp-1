@@ -27,9 +27,9 @@ export default function DashboardAdminPage({ navigation,history }) {
           "numbers" : "1",
         },
         {
-          "name": "EMEF Iracema Villaça",
-          "street": "Rua Santa Virginia",
-          "number": "66",
+          "name": "EMEF Barão de Piratininga",
+          "street": "Rua José Henrique da Costa ",
+          "number": "252",
           "city" : "São Roque",
           "state" : "São Paulo",
           "numbers" : "1",
@@ -69,15 +69,15 @@ export default function DashboardAdminPage({ navigation,history }) {
     <DivList>
       <BackButton/>
       <ButtonMenu onClick={() => goView('Escolas')} margin="80px">
-          <p>Cadastro de Escolas</p>
+          <p>cadastro de escolas</p>
           <img src={IconScholl}/>
       </ButtonMenu>
       <ButtonMenu onClick={() => goView('Empresas')}>
         <img src={IconCompany}/>
-        <p>Cadastro de Empresas</p>
+        <p>cadastro de empresas</p>
       </ButtonMenu>
       {/* <TestStyled>DashboardSchool</TestStyled> */}
-      <TextListBold> <span onClick={() => setType('Escolas')}>Escolas</span> / <span onClick={() => setType('Empresas')}>Empresas</span></TextListBold>
+      <TextListBold> <span onClick={() => setType('Escolas')}>escolas</span> / <span onClick={() => setType('Empresas')}>empresas</span></TextListBold>
       <TitleLits>{type}</TitleLits>
       {type == "Escolas" &&
         <>
@@ -108,7 +108,7 @@ export default function DashboardAdminPage({ navigation,history }) {
               </DivCol>
 
               <DivCol20>
-                <LabelList>Alunos</LabelList>
+                <LabelList>alunos</LabelList>
                 <TextListBold>{school.numbers}</TextListBold>
               </DivCol20>
             </DivRow>
@@ -127,7 +127,7 @@ export default function DashboardAdminPage({ navigation,history }) {
               </DivCol>
 
               <DivCol20>
-                <LabelList>Alunos</LabelList>
+                <LabelList>alunos</LabelList>
                 <TextListBold>{company.numbers}</TextListBold>
               </DivCol20>
             </DivRow>

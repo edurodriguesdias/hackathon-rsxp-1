@@ -109,6 +109,7 @@ export const FileAreaStyled = styled.label`
 `;
 
 export const TitleLits = styled.h2`
+  text-transform: lowercase;
   font-size: 3.5rem;
   margin-top: 22px;
   margin-bottom: 22px;
@@ -148,6 +149,7 @@ export const LabelList = styled.p`
 `;
 
 export const TextListBold = styled.p`
+  // text-transform: lowercase;
   font-size: 1.5rem;
   font-weight: bold;
   span {
@@ -159,6 +161,7 @@ export const TextListBold = styled.p`
 `;
 
 export const TextList = styled.p`
+  // text-transform: lowercase;
   color: ${colors.darkGray};
   font-size: 1.5rem;
 `;

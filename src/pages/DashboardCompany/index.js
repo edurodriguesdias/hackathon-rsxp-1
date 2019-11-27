@@ -15,7 +15,7 @@ export default function DashboardCompanyPage({ navigation }) {
   return (
     <DivList>
       <BackButton />
-      <TitleLits>Escolas</TitleLits>
+      <TitleLits>escolas</TitleLits>
       <SubTitle text="segue abaixo uma listagem de escolas que possuem alunos interessados em conhecer vocês" />
       <UlList>
         {schools.map(school => (
@@ -35,7 +35,7 @@ export default function DashboardCompanyPage({ navigation }) {
 
               <DivCol20>
                 <LabelList>Alunos</LabelList>
-                <TextListBold>23</TextListBold>
+                <TextListBold>0</TextListBold>
               </DivCol20>
             </DivRow>
           </LiList>
