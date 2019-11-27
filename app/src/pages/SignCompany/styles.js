@@ -1,5 +1,8 @@
 import styled from "styled-components";
-
-export const TestStyled = styled.h1`
-  color: red;
+import { colors } from "../../styles/colors";
+export const FileAreaStyled = styled.h1`
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  border: 1px solid ${colors.light};
 `;
