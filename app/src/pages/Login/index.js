@@ -19,7 +19,7 @@ function LoginPage({ history }) {
     });
 
     localStorage.setItem("rsxp:token", data.token);
-    history.push("/admin/dashboard");
+    history.push("/company/dashboard");
   }
 
   return (
