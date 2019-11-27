@@ -46,7 +46,7 @@ function SignStudentPage({ history }) {
         <InputStyled type="tel" placeholder="cep*" />
         <InputStyled type="text" placeholder="escolaridade*" />
         <SelectStyled>
-          <option value="">Selecione uma escola *</option>
+          <option value="">selecione sua escola *</option>
           {schools.map(obj => (
             <option>{obj.name}</option>
           ))}
