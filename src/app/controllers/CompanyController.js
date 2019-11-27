@@ -14,7 +14,7 @@ class CompanyController {
             ],
         });
 
-        return res.json(companies);
+        return res.json(companies.reverse());
     }
 
     async store(req, res) {
