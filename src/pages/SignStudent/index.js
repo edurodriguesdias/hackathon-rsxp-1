@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BackButton from "../../components/BackButton";
 import Buttton from "../../components/Button";
+import api from "../../services/api";
 import {
   ContainerStyled,
   FormStyled,
   InputStyled,
   TitleLits
 } from "../../styles/components";
+import { BoxCompaniesStyled } from "./styles";
 
-export default function SignStudentPage({ navigation }) {
+function SignStudentPage({ history }) {
+  async function getCompanies() {
+    const { data } = await api.get("/companies");
+    setCompanies(data);
+  }
+  useEffect(() => {
+    getCompanies();
+  }, []);
+
+  const [companies, setCompanies] = useState([]);
+  // setCompanies(data);
+  console.log("companies", companies);
   return (
     <ContainerStyled>
       <BackButton />
@@ -26,8 +39,15 @@ export default function SignStudentPage({ navigation }) {
         <InputStyled type="text" placeholder="uf" maxLength="2" />
         <InputStyled type="tel" placeholder="cep" />
         <InputStyled type="text" placeholder="escolaridade" />
+        <BoxCompaniesStyled>
+          {companies.map((obj, indice) => (
+            <img key={indice} src={obj.logo.url} alt={obj.name} />
+          ))}
+        </BoxCompaniesStyled>
+        <InputStyled type="text" placeholder="sugira uma empresa" />
         <Buttton text="cadastrar" />
       </FormStyled>
     </ContainerStyled>
   );
 }
+export default SignStudentPage;
