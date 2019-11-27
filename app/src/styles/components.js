@@ -17,25 +17,32 @@ export const ContainerStyled = styled.div`
   padding-bottom: 5vh;
   position: relative;
 
-  ${props => {
-    props.logo &&
-      css`
-        &:before {
-          content: "";
-          width: 200px;
-          height: 200px;
-          background-image: url(${logo});
-          background-repeat: no-repeat;
-          background-size: cover;
-          position: absolute;
-          top: 0vw;
-          left: 10px;
-          z-index: 9999;
-          left: auto;
-          right: auto;
-        }
-      `;
-  }}
+  &:before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-image: url(${logo});
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+
+    top: 0vw;
+    z-index: 9999;
+  }
+
+  ${props =>
+    props.logoCenter
+      ? css`
+          &:before {
+            left: auto;
+            right: auto;
+          }
+        `
+      : css`
+          &:before {
+            left: 10px;
+          }
+        `};
 `;
 export const InputStyled = styled.input`
   width: 40%;

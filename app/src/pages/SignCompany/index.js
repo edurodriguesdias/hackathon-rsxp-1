@@ -58,7 +58,7 @@ export default function SignSchoolPage({ history }) {
   }
 
   return (
-    <ContainerStyled>
+    <ContainerStyled logoCenter={false}>
       <BackButton />
       <FormStyled onSubmit={handleSubmit}>
         <FileAreaStyled style={{ backgroundImage: `url(${preview})` }}>

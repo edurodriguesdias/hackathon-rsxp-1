@@ -24,12 +24,11 @@ export const ButtonStyled = styled.button`
 
   cursor: pointer;
   position: relative;
-  ${({ loading }) => {
+  ${({ loading }) =>
     loading &&
-      css`
-        background-color: ${colors.primary};
-      `;
-  }}
+    css`
+      background-color: ${colors.primary};
+    `};
 
   svg {
     width: 100%;

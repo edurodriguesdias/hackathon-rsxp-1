@@ -27,7 +27,7 @@ function LoginPage({ history }) {
       return false;
     }
 
-    toast.success(`olá, ${data.user.name}`);
+    toast.info(`olá, ${data.user.name}`);
     if (data.user.type == 1) {
       //admin
       history.push("/admin/dashboard");
@@ -37,7 +37,7 @@ function LoginPage({ history }) {
   }
 
   return (
-    <ContainerStyled logo={true}>
+    <ContainerStyled logoCenter={true}>
       <FormStyled onSubmit={handleSubmit}>
         <InputStyled
           type="email"
