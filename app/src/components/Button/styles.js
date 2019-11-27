@@ -10,6 +10,7 @@ export const ButtonContentStyled = styled.div`
 `;
 
 export const ButtonStyled = styled.button`
+  background-color: ${colors.secondary};
   font-size: 1.6rem;
   font-weight: 600;
   border-radius: 5px;
@@ -24,13 +25,10 @@ export const ButtonStyled = styled.button`
   cursor: pointer;
   position: relative;
   ${({ loading }) => {
-    loading
-      ? css`
-          background-color: ${colors.primary};
-        `
-      : css`
-          background-color: ${colors.secondary};
-        `;
+    loading &&
+      css`
+        background-color: ${colors.primary};
+      `;
   }}
 
   svg {
