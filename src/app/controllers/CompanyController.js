@@ -26,13 +26,15 @@ class CompanyController {
             return res.status(200).json({ error: 'Company already exists.' });
         }
 
-        const { originalname: name, filename: path } = req.file;
-        const file = await File.create({
-            name,
-            path,
-        });
+        // const { originalname: name, filename: path } = req.file;
+        // const file = await File.create({
+        //     name,
+        //     path,
+        // });
 
-        const company = await Company.create({ ...req.body, logo_id: file.id });
+        // const company = await Company.create({ ...req.body, logo_id: file.id });
+
+        const company = await Company.create(req.body);
 
         return res.json(company);
     }

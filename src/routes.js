@@ -22,7 +22,7 @@ routes.post('/students', StudentsController.store);
 routes.post('/users', UserController.store);
 
 routes.get('/companies', CompanyController.index);
-routes.post('/companies', upload.single('file'), CompanyController.store);
+routes.post('/companies', CompanyController.store);
 
 routes.get('/schools', SchoolController.index);
 routes.post('/schools', SchoolController.store);
