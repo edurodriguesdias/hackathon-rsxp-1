@@ -32,10 +32,7 @@ export const InputStyled = styled.input`
   }
 `;
 
-export const TitleLits = styled.h2`
-  font-size: 24px;
-  margin-top: 22px;
-`;
+
 
 export const FormStyled = styled.form`
   display: flex;
@@ -77,3 +74,73 @@ export const FileAreaStyled = styled.label`
     display: none;
   }
 `;
+
+export const TitleLits = styled.h2`
+  font-size: 3.5rem;
+  margin-top:22px;
+  margin-bottom:22px;
+  width:100%;
+  height:auto;
+`;
+
+export const UlList = styled.ul`
+   width:90%;
+   height:auto;
+`;
+
+export const LiList = styled.li`
+   width:100%;
+   height:auto;
+   list-style-type: none;
+   border-top: 1px  solid #ccc;
+   padding: 16px 0 16px 0;
+`;
+
+export const DivList = styled.div`
+  padding: 25px 16px;
+  width: 80vw;
+  min-height: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: ${colors.light};
+  border-radius: 20px 20px 0 0;
+  margin-top: 10vh;
+`;
+
+export const LabelList = styled.p`
+    font-size: 1rem ;
+    color: #ccc;
+`;
+
+export const TextListBold = styled.p`
+    font-size: 1.5rem ;
+    font-weight:bold;
+`;
+
+export const TextList= styled.p`
+    font-size: 1.5rem ;
+`;
+
+export const DivRow = styled.div`
+    display:flex;
+    flex-direction: row;
+`;
+export const DivCol = styled.div`
+    display:flex;
+    flex-direction: column;
+    width:100%;
+
+    img{
+      width: 30px;
+      height: 30px;
+    }
+`;
+export const DivCol20 = styled.div`
+    display:flex;
+    flex-direction: column;
+    width:20%;
+    justify-content: center;
+    align-items: center;
+    
+`;
+
