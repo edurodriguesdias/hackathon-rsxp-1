@@ -11,12 +11,16 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={SignCompanyPage} />
+        <Route path="/" exact component={LoginPage} />
         <Route path="/student" exact component={SignStudentPage} />
         <Route path="/school" exact component={SignSchoolPage} />
         <Route path="/company" exact component={SignCompanyPage} />
         <Route path="/login" exact component={LoginPage} />
-        <Route path="/company/dashboard" exact component={DashboardCompanyPage} />
+        <Route
+          path="/company/dashboard"
+          exact
+          component={DashboardCompanyPage}
+        />
         <Route path="/admin/dashboard" exact component={DashboardAdminPage} />
       </Switch>
     </BrowserRouter>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import logo from "../assets/logo.png";
 import { colors } from "../styles/colors";
 
 export const ContainerStyled = styled.div`
@@ -14,6 +15,21 @@ export const ContainerStyled = styled.div`
   margin: 10vh auto;
   overflow-y: auto;
   padding-bottom: 5vh;
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-image: url(${logo});
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0vw;
+    left: auto;
+    right: auto;
+    z-index: 9999;
+  }
 `;
 export const InputStyled = styled.input`
   width: 40%;
@@ -21,14 +37,20 @@ export const InputStyled = styled.input`
   color: red;
   border: 0;
   background: transparent;
-  border-bottom: 2px solid #cecece;
+  border-bottom: 3px solid ${colors.gray};
   color: ${colors.primary};
   font-size: 2rem;
   margin-top: 5vh;
   text-align: center;
+  transition: border-bottom 1s;
 
   &::placeholder {
     color: ${colors.gray};
+  }
+
+  &:focus {
+    border-bottom: 3px solid ${colors.primary};
+    transition: border-bottom 1s;
   }
 `;
 
@@ -57,14 +79,13 @@ export const FileAreaStyled = styled.label`
   background-repeat: no-repeat;
   background-size: cover;
 
-
   &:hover {
     border: 1px solid ${colors.secondary};
   }
   .has-thumbnail {
     display: none;
   }
-  
+
   img {
     width: 50px;
     height: 50px;
